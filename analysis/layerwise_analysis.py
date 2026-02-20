@@ -5,7 +5,7 @@ from pathlib import Path
 
 import config
 
-
+from utils.load_hidden_states import load_hidden_states
 # ---------------------------
 # Global Matplotlib Styling
 # ---------------------------
@@ -14,22 +14,6 @@ plt.style.use("default")
 plt.rcParams["axes.edgecolor"] = config.COLOR_SECONDARY
 plt.rcParams["axes.linewidth"] = 1
 plt.rcParams["font.size"] = config.FONT_SIZE_LABEL
-
-
-# ---------------------------
-# Data Loading
-# ---------------------------
-
-def load_hidden_states():
-    data_path = Path(config.DATA_PATH)
-    data = torch.load(data_path)
-
-    if config.PROMPT not in data:
-        raise ValueError(f"Prompt not found in data: {config.PROMPT}")
-
-    entry = data[config.PROMPT]
-    return entry["tokens"], entry["hidden_states"]
-
 
 # ---------------------------
 # Token Extraction
