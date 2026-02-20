@@ -5,6 +5,12 @@
 DATA_PATH = "data/hidden_states/gpt2_hidden_states.pt"
 
 PROMPT = "The capital of France is"
+PROMPTS = [
+    "The capital of France is",
+    "The capital of Germany is",
+    "The capital of Italy is",
+]
+
 TARGET_TOKEN = "ĠFrance"
 LAYER_INDEX = -1
 
