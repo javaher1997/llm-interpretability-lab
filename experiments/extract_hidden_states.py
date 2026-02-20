@@ -2,6 +2,7 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from pathlib import Path
 
+import config
 # ---------------------------
 # Configuration
 # ---------------------------
@@ -9,12 +10,6 @@ from pathlib import Path
 MODEL_NAME = "gpt2"
 OUTPUT_DIR = Path("data/hidden_states")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-
-PROMPTS = [
-    "The capital of France is",
-    "The capital of Germany is",
-    "The capital of Italy is",
-]
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print(f"Using device: {device}")
@@ -39,7 +34,7 @@ model.eval()
 results = {}
 
 with torch.no_grad():
-    for prompt in PROMPTS:
+    for prompt in config.PROMPTS:
         inputs = tokenizer(prompt, return_tensors="pt")
         inputs = {k: v.to(device) for k, v in inputs.items()}
 
