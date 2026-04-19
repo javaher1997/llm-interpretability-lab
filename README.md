@@ -42,8 +42,8 @@ hidden_states: A list of PyTorch tensors, where each tensor represents the hidde
 Once you have the gpt2_hidden_states.pt file, you can use the analysis scripts.
 
 **cross_prompt_analysis.py** (Cross-Prompt Token Comparison)
-Purpose: Compares token representations between two different prompts within the same layer, or tracks a specific token’s representation across prompts and layers.
-How to Run:
+* Purpose: Compares token representations between two different prompts within the same layer, or tracks a specific token’s * representation across prompts and layers.
+* How to Run:
 ```bash
 python cross_prompt_analysis.py
 ```
@@ -51,8 +51,8 @@ python cross_prompt_analysis.py
 Expected Output: Visualizations (e.g., similarity matrices between prompts, comparative plots of token embeddings) that highlight differences or similarities in how tokens are represented across different input contexts.
 
 **layerwise_analysis.py** (Layer-wise Token Evolution)
-Purpose: Analyzes the evolution of a specific, target token’s representation across all layers.
-How to Run:
+* Purpose: Analyzes the evolution of a specific, target token’s representation across all layers.
+* How to Run:
 ```bash
 python -m layerwise_analysis
 ```
@@ -60,8 +60,8 @@ python -m layerwise_analysis
 Expected Output: Visualizations (e.g., plots using matplotlib) showing the target token’s representation changes across layers (e.g., norm, similarity).
 
 **token_focus_analysis.py** (Token Comparison within a Layer)
-Purpose: Compares the representations of all tokens within a single, specified layer.
-How to Run:
+* Purpose: Compares the representations of all tokens within a single, specified layer.
+* How to Run:
 ```bash
 python -m token_focus_analysis
 ```
