@@ -37,22 +37,9 @@ Expected Output:A PyTorch file (default: data/hidden_states/gpt2_hidden_states.p
 input_ids: The token IDs for the prompt.
 tokens: The string representation of the tokens.
 hidden_states: A list of PyTorch tensors, where each tensor represents the hidden states for a specific layer (including the embedding layer).
-Stage 2: Performing Analysis
-Once you have the gpt2_hidden_states.pt file, you can use the analysis scripts.
 
-Project Structure:
-text
-.
-├── data/
-│   └── hidden_states/
-│       └── gpt2_hidden_states.pt  # Output from extract_hidden_states.py
-├── utils/               # Utility functions (e.g., for plotting)
-├── config.py             # Global settings (PROMPTS, TARGET_TOKEN, LAYER_INDEX, etc.)
-├── extract_hidden_states.py # Script to generate hidden states data
-├── layerwise_analysis.py # Script for layer-wise analysis
-├── token_focus_analysis.py # Script for token focus analysis
-├── README.md             # This file
-└── requirements.txt      # Python dependencies
+### Stage 2: Performing Analysis
+Once you have the gpt2_hidden_states.pt file, you can use the analysis scripts.
 
 **cross_prompt_analysis.py** (Cross-Prompt Token Comparison)
 Purpose: Compares token representations between two different prompts within the same layer, or tracks a specific token’s representation across prompts and layers.
